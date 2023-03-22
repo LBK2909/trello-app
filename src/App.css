@@ -1,39 +1,260 @@
-.App {
-  text-align: center;
+.App{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-right: 0;
+    position: relative;
+    transition: margin .1s ease-in;
+    background-color: #2e5599;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title{
+   display: flex;
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
+h4{
+    inline-size: 250px;
+    overflow-wrap: break-word;
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+div {
+    display: block;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+.header {
+    background: var(--board-header-background-color);
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.header {
+    height: auto;
+    padding: 8px 4px 4px 12px;
+    position: relative;
+    z-index: 0;
 }
+
+.heading {
+font-size: 18px;
+font-weight: 700;
+line-height: 32px;
+    padding: 0 12px;
+    overflow: hidden;
+    padding-right: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: default;
+    color: var(--dynamic-text)
+}
+
+h1 {
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    border-radius: 3px;
+    cursor: default;
+    float: left;
+    font-size: 2em;
+    height: 32px;
+    line-height: 28px;
+    margin: 0 4px 4px 0;
+    max-width: 400px;
+    overflow: hidden;
+    padding-left: 32px;
+    position: relative;
+    text-decoration: none;
+    text-overflow: ellipsis;
+}
+
+
+
+.icon, .chevron, .filter, .three-dots {
+    background-color:rgb(63, 120, 185);
+    transition: .1s ease;
+    border-radius: 3px;
+    cursor: default;
+    float: left;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px 4px 0;
+    max-width: 400px;
+    padding-left: 32px;
+    position: relative;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    width:32px;
+}
+
+
+.icon-sm, .chevron-sm, .filter-sm, .three-dots-sm{
+    font-size: 16px;
+    height: 32px;
+    line-height: 20px;
+    width: 32px;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: trellicons;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: bottom;
+    color: white;
+    padding: 6px;
+    background-clip: content-box;
+    background-origin: content-box;
+    left: 0;
+    position:absolute;
+    top: 0;
+
+}
+
+.border-header-btn:not(.no-edit){
+    background-color: var(--dynamic-button);
+}
+
+.bi bi-star::before {
+   content:"\e996";
+}
+
+.board-header-btn-divider{
+    border-left: 2px solid;
+    color: white;
+    float: left;
+    height: 16px;
+    margin: 8px 8px 12px 4px;
+}
+
+.board-header-btn-icon {
+    background-clip: content-box;
+    background-origin: content-box;
+    left: 0;
+    padding: 6px;
+    position: absolute;
+    top: 0;
+}
+
+.board-header-btn-text{
+    overflow: hidden;
+    padding-right: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+ }
+ .board-header-btn{
+    width: 85px;
+ }
+
+ .kanban{
+    background-color:white;
+    transition: .1s ease;
+    border-radius: 3px;
+    cursor: default;
+    float: left;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px 4px 0;
+    max-width: 400px;
+    padding-left: 32px;
+    position: relative;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    width:80px;
+}
+
+
+.kanban-sm {
+    font-size: 16px;
+    height: 32px;
+    line-height: 20px;
+    width: 32px;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: trellicons;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: bottom;
+    color: black;
+    padding: 6px;
+    background-clip: content-box;
+    background-origin: content-box;
+    left: 0;
+    position:absolute;
+    top: 0;
+
+}
+
+.bi bi-chevron-down::before{
+    content:"\f282";
+}
+
+.board-container{
+    width: 120px;
+    display: inline;
+}
+
+.board-container-right{
+    display: inline;
+    float: right;
+}
+
+.bi bi-filter::before {
+    content:"\f3ca";
+ }
+
+ .bi bi-person-circle::before {
+    content:"\f4d7";
+    
+ }
+
+
+ .person-circle {
+    transition: .1s ease;
+    border-radius: 3px;
+    cursor: default;
+    float: left;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px 4px 0;
+    max-width: 400px;
+    padding-left: 32px;
+    position: relative;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    width:20px;
+}
+
+
+ .person-circle-sm{
+    font-size: 16px;
+    height: 32px;
+    line-height: 20px;
+    width: 32px;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-family: trellicons;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: bottom;
+    color: white;
+    padding: 6px;
+    background-clip: content-box;
+    background-origin: content-box;
+    left: 0;
+    position:absolute;
+    top: 0;
+}
+
+.listsContainer{
+    display: flex;
+    flex-direction: row;
+    margin-right: 8;
+} 
